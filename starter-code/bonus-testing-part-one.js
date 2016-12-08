@@ -20,10 +20,10 @@ var assert = require('./vendor/assert');
 
 //  Below, we will write an example of our test in action:
 
-var ricksFaveAnimal;
+var ricksFaveAnimal = ' ';
 
 function testRicksFaveAnimal() {
-  assert ();
+  assert (ricksFaveAnimal, 'ricksFaveAnimal exists!', 'ricksFaveAnimal is ' + typeof ricksFaveAnimal);
 }
 
 testRicksFaveAnimal();
@@ -52,7 +52,7 @@ message. */
 function testWhichAnimal() {
   // TODO: Complete this assert function.
   // Don't forget your three arguments!
-  assert();
+  assert(favoriteAnimals.indexOf(nextAnimal) >=0, 'nextAnimal is valid.', 'nextAnimal is invalid.');
 };
 
 testWhichAnimal();
@@ -62,3 +62,9 @@ nextAnimal variable ... then invoke your test!
 When ready, execute this program in your terminal with node
 (node bonus-testing-part-one)  :-)
 Your code begins on the next line: */
+
+var ranIdxNum = Math.floor(Math.random() * (favoriteAnimals.length));
+
+nextAnimal = favoriteAnimals[ranIdxNum];
+
+testWhichAnimal();
